@@ -1,0 +1,22 @@
+{
+  "name": "cake.stylecop",
+  "version": "1.0.0",
+  "description": "This is a thin wrapper around the standard StyleCop libraries which exposes StyleCop in a manner which\r can be used by Cake build scripts.",
+  "main": "index.js",
+  "scripts": {
+    "Build": "powershell -File ./build.ps1 -Target Build --settings_skipverification=true",
+    "Package": "powershell -File ./build.ps1 -Target Package --settings_skipverification=true", 
+    "Publish": "powershell -File ./build.ps1 -Target Publish --settings_skipverification=true",
+    "Clean": "powershell -File ./build.ps1 -Target Clean --settings_skipverification=true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashthos/Cake.StyleCop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ashthos/Cake.StyleCop/issues"
+  },
+  "homepage": "https://github.com/Ashthos/Cake.StyleCop#readme"
+}

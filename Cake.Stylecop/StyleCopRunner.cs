@@ -15,7 +15,7 @@
     using Cake.Core.IO;
 
     using global::StyleCop;
-    
+
     /// <summary>
     /// A proxy onto the StyleCopSettings type.
     /// </summary>
@@ -85,7 +85,7 @@
             }
 
             var styleCopProjects = new List<CodeProject>();
-            
+
             var solution = solutionParser.Parse(solutionFile);
             foreach (var solutionProject in solution.Projects.Where(p => p.Type != FOLDER_PROJECT_TYPE_GUID))
             {
@@ -96,7 +96,10 @@
 
                 foreach (var projectFile in project.Files)
                 {
-                    if (projectFile.FilePath.GetExtension() != ".cs") continue;
+                    if (projectFile.FilePath.GetExtension() != ".cs")
+                    {
+                        continue;
+                    }
 
                     context.Log.Debug($"Stylecop: Found file {projectFile.FilePath}");
                     styleCopConsole.Core.Environment.AddSourceCode(styleCopProject, projectFile.FilePath.ToString(), null);
@@ -202,7 +205,7 @@
                 else
                 {
                     context.Log.Information($"StyleCopReportSetting.ResultFiles: {settings.ResultFiles.First()}");
-                }                
+                }
 
                 // merge xml files
                 var finalResultFile = MergeResultFile(context, settings.ResultFiles);

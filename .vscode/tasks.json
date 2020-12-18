@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "Build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "Cake: Run Build"
+		},
+		{
+			"type": "npm",
+			"script": "Package",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Cake: Run Package"
+		},
+		{
+			"type": "cake",
+			"script": "Publish",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "Cake: Run Publish"
+		}
+	]
+}
